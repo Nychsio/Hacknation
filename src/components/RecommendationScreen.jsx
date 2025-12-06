@@ -1,9 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { User, ArrowUpRight, Calendar, ChevronRight, FileText, AlertCircle } from 'lucide-react';
+import { User, ArrowUpRight, Calendar, ChevronRight, FileText, AlertCircle, LogOut } from 'lucide-react';
 import { Badge } from './Shared';
 
-const RecommendationScreen = ({ onSelectProject }) => {
+const RecommendationScreen = ({ onSelectProject, onLogout }) => {
   return (
     <div className="h-screen w-screen bg-slate-50 font-sans overflow-hidden flex flex-col text-slate-900">
        
@@ -26,6 +26,9 @@ const RecommendationScreen = ({ onSelectProject }) => {
              <div className="w-9 h-9 rounded-full bg-slate-100 flex items-center justify-center border border-slate-200 text-slate-500">
                 <User size={18}/>
              </div>
+             <button onClick={onLogout} className="text-slate-400 hover:text-slate-600 transition-colors ml-2" title="Wyloguj">
+                <LogOut size={20} />
+             </button>
           </div>
        </header>
 

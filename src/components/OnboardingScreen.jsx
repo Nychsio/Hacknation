@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Shield, User, Briefcase, Check, Coins, FileText, ArrowUpRight } from 'lucide-react';
+import { Shield, User, Briefcase, Check, Coins, FileText, ArrowUpRight, Plus, Tractor } from 'lucide-react';
 
 const OnboardingScreen = ({ onNext }) => {
   const [loading, setLoading] = useState(false);
@@ -62,9 +62,9 @@ const OnboardingScreen = ({ onNext }) => {
               </div>
               <div>
                  <label className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2 block">Kluczowe Zainteresowania</label>
-                 <div className="grid grid-cols-2 gap-3">
+                 <div className="flex flex-wrap gap-3">
                     <div className="p-3 border-2 border-slate-900 bg-slate-800 text-white rounded-xl flex items-center gap-2 shadow-lg scale-105 transform">
-                       <Coins size={18}/> <span>Kryptowaluty</span> <Check size={14} className="ml-auto"/>
+                       <Coins size={18}/> <span>Kryptowaluty</span> <Check size={14} className="ml-2"/>
                     </div>
                     <div className="p-3 border border-slate-200 rounded-xl flex items-center gap-2 text-slate-500">
                        <Shield size={18}/> <span>Obronność</span>
@@ -73,12 +73,15 @@ const OnboardingScreen = ({ onNext }) => {
                        <FileText size={18}/> <span>Podatki</span>
                     </div>
                     <div className="p-3 border border-slate-200 rounded-xl flex items-center gap-2 text-slate-500 opacity-50">
-                       <span>Rolnictwo</span>
+                       <Tractor size={18}/> <span>Rolnictwo</span>
                     </div>
+                    <button className="p-3 border border-dashed border-slate-300 rounded-xl flex items-center justify-center text-slate-400 hover:border-blue-400 hover:text-blue-500 hover:bg-blue-50 transition-all aspect-square">
+                       <Plus size={18}/>
+                    </button>
                  </div>
               </div>
               <button onClick={handleStart} className="w-full bg-blue-600 hover:bg-blue-700 text-white py-4 rounded-xl font-bold text-lg flex items-center justify-center gap-2 transition-all shadow-lg shadow-blue-200 mt-4">
-                 Analizuj Prawo pode mnie <ArrowUpRight/>
+                 Uruchom analizę legislacyjną <ArrowUpRight/>
               </button>
            </div>
         </div>

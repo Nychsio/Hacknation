@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   FileText, ArrowLeft, Send, ShieldAlert, X,
-  Bell, LayoutDashboard, FileBarChart, Lock, User
+  Bell, LayoutDashboard, FileBarChart, Lock, User, LogOut
 } from 'lucide-react';
 import { Badge, HorizontalTrain } from './Shared';
 
@@ -61,7 +61,7 @@ const DesktopPDFOverlay = ({ onClose }) => (
   </motion.div>
 );
 
-const MainDashboard = ({ onBack }) => {
+const MainDashboard = ({ onBack, onLogout }) => {
    const [showDoc, setShowDoc] = useState(false);
    
    return (
@@ -85,7 +85,13 @@ const MainDashboard = ({ onBack }) => {
              <div onClick={onBack} className="flex items-center gap-2 cursor-pointer hover:bg-slate-100 px-2 py-1 rounded transition-colors">
                 <ArrowLeft className="text-slate-500"/> <span className="font-bold text-slate-700">Powrót do strony głównej</span>
              </div>
-             <div className="flex items-center gap-4"><Badge color="red">Wysokie Ryzyko</Badge><Bell className="text-slate-400"/></div>
+             <div className="flex items-center gap-4">
+                <Badge color="red">Wysokie Ryzyko</Badge>
+                <Bell className="text-slate-400"/>
+                <button onClick={onLogout} className="text-slate-400 hover:text-slate-600 transition-colors" title="Wyloguj">
+                   <LogOut size={20} />
+                </button>
+             </div>
           </header>
  
           <div className="flex-1 overflow-y-auto p-8 flex gap-6">

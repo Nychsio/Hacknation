@@ -4,11 +4,11 @@ import { Train, CheckCircle, AlertCircle } from 'lucide-react';
 
 export const Badge = ({ children, color = "blue" }) => {
   const styles = {
-    yellow: "bg-yellow-100 text-yellow-800 border-yellow-300",
-    green: "bg-green-100 text-green-800 border-green-300",
-    red: "bg-red-100 text-red-800 border-red-300",
-    blue: "bg-blue-50 text-blue-700 border-blue-200",
-    gray: "bg-slate-100 text-slate-600 border-slate-200",
+    yellow: "bg-yellow-100 text-yellow-800 border-yellow-800",
+    green: "bg-green-100 text-green-800 border-green-800",
+    red: "bg-red-100 text-red-800 border-red-800",
+    blue: "bg-blue-50 text-blue-700 border-blue-700",
+    gray: "bg-slate-100 text-slate-600 border-slate-600",
   };
   return (
     <span className={`px-2 py-1 rounded text-xs font-bold uppercase tracking-wider border ${styles[color] || styles.blue}`}>
@@ -43,7 +43,7 @@ export const HorizontalTrain = () => {
                {step.status === 'done' ? <CheckCircle size={14} /> : step.status === 'current' ? <div className="animate-pulse w-2 h-2 bg-white rounded-full"/> : <div className="w-2 h-2 bg-slate-300 rounded-full" />}
              </div>
              <span className={`mt-3 text-[10px] font-bold uppercase ${step.status === 'current' ? 'text-blue-900' : 'text-slate-400'}`}>{step.label}</span>
-             {step.userAction && <div className="absolute -top-8 bg-yellow-100 text-yellow-900 text-[10px] px-2 py-1 rounded border border-yellow-300 font-bold">Twój wpływ!</div>}
+             {step.userAction && <div className="absolute -top-8 bg-yellow-100 text-yellow-900 text-[10px] px-2 py-1 rounded border border-yellow-900 font-bold">Twój wpływ!</div>}
            </div>
          ))}
        </div>

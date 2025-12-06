@@ -34,11 +34,17 @@ export default function App() {
           )}
           
           {view === 'list' && (
-            <RecommendationScreen onSelectProject={() => setView('dashboard')} />
+            <RecommendationScreen 
+              onSelectProject={() => setView('dashboard')} 
+              onLogout={() => setView('onboarding')}
+            />
           )}
           
           {view === 'dashboard' && (
-            <MainDashboard onBack={() => setView('list')} />
+            <MainDashboard 
+              onBack={() => setView('list')} 
+              onLogout={() => setView('onboarding')}
+            />
           )}
         </motion.div>
       </AnimatePresence>
