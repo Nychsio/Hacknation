@@ -34,9 +34,9 @@ export const HorizontalTrain = () => {
          </h3>
          <Badge color="green">API Sejm: Live</Badge>
        </div>
-       <div className="relative flex justify-between items-center px-4">
-         <div className="absolute top-1/2 left-0 w-full h-1 bg-slate-200 -z-0 rounded"></div>
-         <div className="absolute top-1/2 left-0 h-1 bg-blue-600 -z-0 rounded transition-all duration-1000" style={{ width: '25%' }}></div>
+       <div className="relative flex justify-between items-start px-4">
+         <div className="absolute top-4 -translate-y-1/2 left-0 w-full h-1 bg-slate-200 -z-0 rounded"></div>
+         <div className="absolute top-4 -translate-y-1/2 left-0 h-1 bg-blue-600 -z-0 rounded transition-all duration-1000" style={{ width: '25%' }}></div>
          {steps.map((step, index) => (
            <div key={index} className="relative z-10 flex flex-col items-center">
              <div className={`w-8 h-8 rounded-full flex items-center justify-center border-4 bg-white ${step.status === 'done' ? 'border-blue-600 text-blue-600' : step.status === 'current' ? 'border-blue-600 text-white bg-blue-600 scale-110' : 'border-slate-200 text-slate-300'}`}>

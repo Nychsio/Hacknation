@@ -105,14 +105,43 @@ const MainDashboard = ({ onBack }) => {
                   <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col relative overflow-hidden">
                      <h4 className="font-bold text-slate-700 mb-2 flex items-center gap-2"><ShieldAlert size={18} className="text-red-500"/> Impact Graph</h4>
                      <div className="flex-1 flex items-center justify-center relative">
-                        <svg className="w-full h-full" viewBox="0 0 200 100">
-                           <line x1="100" y1="50" x2="50" y2="20" stroke="#cbd5e1" strokeWidth="2" />
-                           <line x1="100" y1="50" x2="150" y2="80" stroke="#cbd5e1" strokeWidth="2" />
-                           <circle cx="100" cy="50" r="10" fill="#2563eb" />
-                           <circle cx="50" cy="20" r="8" fill="#ef4444" />
-                           <text x="30" y="10" fontSize="8" fill="#ef4444">KOSZTY</text>
-                           <circle cx="150" cy="80" r="8" fill="#10b981" />
-                           <text x="140" y="95" fontSize="8" fill="#10b981">ULGA MŚP</text>
+                        <svg className="w-full h-full" viewBox="0 0 300 150" style={{ filter: 'drop-shadow(0px 2px 4px rgba(0,0,0,0.05))' }}>
+                           <defs>
+                              <radialGradient id="simpleBlue" cx="50%" cy="50%" r="50%" fx="30%" fy="30%">
+                                 <stop offset="0%" stopColor="#60a5fa" />
+                                 <stop offset="100%" stopColor="#2563eb" />
+                              </radialGradient>
+                              <radialGradient id="simpleRed" cx="50%" cy="50%" r="50%" fx="30%" fy="30%">
+                                 <stop offset="0%" stopColor="#f87171" />
+                                 <stop offset="100%" stopColor="#dc2626" />
+                              </radialGradient>
+                              <radialGradient id="simpleGreen" cx="50%" cy="50%" r="50%" fx="30%" fy="30%">
+                                 <stop offset="0%" stopColor="#34d399" />
+                                 <stop offset="100%" stopColor="#059669" />
+                              </radialGradient>
+                           </defs>
+
+                           {/* Edges - Gooey Style (Thick ends, thin middle) */}
+                           <path d="M 153 69 Q 115 57.5 82 36 L 78 44 Q 115 57.5 147 81 Z" fill="#cbd5e1" />
+                           <path d="M 147 81 Q 185 92.5 218 114 L 222 106 Q 185 92.5 153 69 Z" fill="#cbd5e1" />
+
+                           {/* Node 1: Costs (Red) */}
+                           <g transform="translate(80, 40)">
+                              <circle r="14" fill="url(#simpleRed)" stroke="white" strokeWidth="2" />
+                              <text y="28" textAnchor="middle" className="text-[10px] font-bold fill-slate-500 tracking-wider font-sans uppercase">Koszty</text>
+                           </g>
+
+                           {/* Node 2: Center (Blue) */}
+                           <g transform="translate(150, 75)">
+                              <circle r="20" fill="url(#simpleBlue)" stroke="white" strokeWidth="2" />
+                              <text y="36" textAnchor="middle" className="text-[10px] font-bold fill-slate-500 tracking-wider font-sans uppercase">Projekt</text>
+                           </g>
+
+                           {/* Node 3: Benefit (Green) */}
+                           <g transform="translate(220, 110)">
+                              <circle r="14" fill="url(#simpleGreen)" stroke="white" strokeWidth="2" />
+                              <text y="28" textAnchor="middle" className="text-[10px] font-bold fill-slate-500 tracking-wider font-sans uppercase">Ulga MŚP</text>
+                           </g>
                         </svg>
                      </div>
                   </div>

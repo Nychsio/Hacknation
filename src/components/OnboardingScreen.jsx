@@ -34,7 +34,7 @@ const OnboardingScreen = ({ onNext }) => {
           <div>
             <div className="flex items-center gap-3 mb-6">
               <div className="w-10 h-10 bg-blue-600 rounded flex items-center justify-center font-bold text-xl">L</div>
-              <span className="font-bold text-xl tracking-tight">Legis<span className="text-blue-400">2.0</span></span>
+              <span className="font-bold text-xl tracking-tight">Legis <span className="text-blue-400">2.0</span></span>
             </div>
             <h1 className="text-4xl font-bold leading-tight mb-4">Prawo, które Cię rozumie.</h1>
             <p className="text-slate-400">Suwerenna sztuczna inteligencja filtruje legislację pod Twój biznes.</p>

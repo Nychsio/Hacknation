@@ -21,6 +21,16 @@
   background: #94a3b8; 
 }
 
+::selection {
+  background: #d1e5ff;
+  color: inherit;
+}
+
+::-moz-selection {
+  background: #d1e5ff;
+  color: inherit;
+}
+
 /* Reset dla body, żeby nie było białych marginesów */
 body {
   @apply bg-slate-100 text-slate-900;
