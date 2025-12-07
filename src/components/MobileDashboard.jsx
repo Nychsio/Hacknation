@@ -1,12 +1,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { 
-  Bell, Search, Filter, ChevronRight, 
-  FileText, Calendar, AlertCircle, Home, 
-  Menu, User 
+    Bell, Search, Filter, ChevronRight, 
+    FileText, Calendar, AlertCircle, Home, 
+    Menu, User, ArrowLeft
 } from 'lucide-react';
 
-const MobileDashboard = ({ onSelectProject }) => {
+const MobileDashboard = ({ onSelectProject, onBack }) => {
   
   // DANE (MOCK DATA)
   const PROJECTS = [
@@ -56,9 +56,14 @@ const MobileDashboard = ({ onSelectProject }) => {
       
       {/* 1. HEADER (Fixed Top) */}
       <div className="sticky top-0 z-30 bg-white/90 backdrop-blur-md border-b border-slate-200 px-5 py-4 flex justify-between items-center">
-        <div className="flex flex-col">
-            <span className="text-[10px] uppercase font-bold text-slate-400 tracking-wider">Mój Pulpit</span>
-            <span className="text-lg font-bold text-slate-800">Dzień dobry, Janie</span>
+        <div className="flex items-center gap-3">
+            <button onClick={() => onBack && onBack()} className="p-2 rounded-md hover:bg-slate-100">
+                <ArrowLeft size={20} className="text-slate-600" />
+            </button>
+            <div className="flex flex-col">
+                <span className="text-[10px] uppercase font-bold text-slate-400 tracking-wider">Mój Pulpit</span>
+                <span className="text-lg font-bold text-slate-800">Dzień dobry, Janie</span>
+            </div>
         </div>
         <div className="relative">
             <Bell className="text-slate-600" size={24} />

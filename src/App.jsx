@@ -23,6 +23,7 @@ export default function App() {
   // Stan widoku MOBILE
   const [mobileView, setMobileView] = useState('onboarding'); // 'onboarding', 'dashboard', 'detail'
   const [selectedMobileProject, setSelectedMobileProject] = useState(null);
+  const handleBack = () => setView('onboarding');
 
   // Zapisywanie widoku desktop w localStorage
   useEffect(() => {
@@ -73,12 +74,13 @@ export default function App() {
                 {/* 2. Dashboard Mobile */}
                 {mobileView === 'dashboard' && (
                     <motion.div key="mob-dash" initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}}>
-                        <MobileDashboard 
-                            onSelectProject={(project) => {
-                                setSelectedMobileProject(project);
-                                setMobileView('detail');
-                            }} 
-                        />
+              <MobileDashboard 
+                  onSelectProject={(project) => {
+                    setSelectedMobileProject(project);
+                    setMobileView('detail');
+                  }} 
+                  onBack={() => setMobileView('onboarding')}
+                />
                     </motion.div>
                 )}
 
@@ -124,8 +126,8 @@ export default function App() {
               
               {view === 'dashboard' && (
                 <MainDashboard 
-                  onBack={() => setView('list')} 
-                  onLogout={() => setView('onboarding')}
+                  onBack={handleBack} 
+                  onLogout={handleBack}
                 />
               )}
 
