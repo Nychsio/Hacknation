@@ -40,3 +40,27 @@
 .read-the-docs {
   color: #888;
 }
+
+/* Godło halo utility: strong white halo using a pseudo-element so glow sits behind the image */
+.godlo-halo {
+  position: relative;
+  display: inline-block;
+}
+.godlo-halo::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 220%;
+  height: 220%;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.95);
+  filter: blur(32px);
+  opacity: 0.95;
+  pointer-events: none;
+  mix-blend-mode: screen;
+  z-index: 0;
+}
+.godlo-img { position: relative; z-index: 10; display: block; }
+

@@ -32,7 +32,7 @@ const OnboardingScreen = ({ onNext, onAdminLogin }) => {
            className={`w-16 h-16 border-4 border-t-transparent rounded-full mb-8 ${isOfficial ? 'border-indigo-500' : 'border-blue-500'}`}
         />
         <h2 className="text-2xl font-bold">
-            {isOfficial ? 'Autoryzacja Domenowa...' : 'Bielik analizuje Dziennik Ustaw...'}
+            {isOfficial ? 'Autoryzacja Domenowa...' : 'Pllum analizuje Dziennik Ustaw...'}
         </h2>
         <p className={`mt-2 ${isOfficial ? 'text-slate-500' : 'text-slate-400'}`}>
             {isOfficial ? 'Weryfikacja uprawnień legislacyjnych' : 'Dopasowywanie do profilu: IT / B2B'}
@@ -111,7 +111,7 @@ const OnboardingScreen = ({ onNext, onAdminLogin }) => {
             <div className="flex items-center gap-4 mt-8">
                 <div className={`px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider flex items-center gap-2 border ${isOfficial ? 'bg-indigo-900/50 border-indigo-400 text-indigo-200' : 'bg-blue-500/50 border-blue-300 text-blue-50'}`}>
                     {isOfficial ? <Cpu size={14} /> : <Lock size={14} />}
-                    {isOfficial ? 'Bielik Engine v2.3' : 'Privacy First'}
+                    {isOfficial ? 'Pllum Lokalnie' : 'Privacy First'}
                 </div>
             </div>
         </div>
