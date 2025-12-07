@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Shield, User, Briefcase, Check, Coins, FileText, ArrowUpRight, Plus, Tractor } from 'lucide-react';
 
+import logo from '../assets/logo.png';
+
 const OnboardingScreen = ({ onNext }) => {
   const [loading, setLoading] = useState(false);
 
@@ -33,7 +35,7 @@ const OnboardingScreen = ({ onNext }) => {
           <div className="absolute top-0 right-0 p-8 opacity-10"><Shield size={200}/></div>
           <div>
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 bg-blue-600 rounded flex items-center justify-center font-bold text-xl">L</div>
+              <img src={logo} alt="Logo" className="w-10 h-10 rounded" />
               <span className="font-bold text-xl tracking-tight">Legis <span className="text-blue-400">2.0</span></span>
             </div>
             <h1 className="text-4xl font-bold leading-tight mb-4">Prawo, które Cię rozumie.</h1>

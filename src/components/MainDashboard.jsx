@@ -2,9 +2,10 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   FileText, ArrowLeft, Send, ShieldAlert, X,
-  Bell, LayoutDashboard, FileBarChart, Lock, User, LogOut
+  Bell, LayoutDashboard, FileBarChart, Lock, User, LogOut, Bird
 } from 'lucide-react';
 import { Badge, HorizontalTrain } from './Shared';
+import logo from '../assets/logo.png';
 
 // --- PDF OVERLAY Z ORŁEM ---
 const DesktopPDFOverlay = ({ onClose }) => (
@@ -68,7 +69,7 @@ const MainDashboard = ({ onBack, onLogout }) => {
      <div className="flex h-screen w-screen bg-slate-100 font-sans overflow-hidden relative">
        {/* Sidebar */}
        <aside className="w-64 bg-slate-900 text-slate-300 flex flex-col p-4 shrink-0">
-         <div className="flex items-center gap-3 px-2 mb-10"><div className="w-8 h-8 bg-blue-600 rounded flex items-center justify-center text-white font-bold">L</div><h1 className="text-xl font-bold text-white">Legis<span className="text-blue-500">2.0</span></h1></div>
+         <div className="flex items-center gap-3 px-2 mb-10"><img src={logo} alt="Logo" className="w-8 h-8 rounded" /><h1 className="text-xl font-bold text-white">Legis <span className="text-blue-500">2.0</span></h1></div>
          <nav className="space-y-2">
             <div className="bg-blue-800 text-white px-4 py-3 rounded-lg flex gap-3 font-medium"><LayoutDashboard size={20}/> Pulpit</div>
             <div className="text-slate-400 px-4 py-3 flex gap-3"><FileBarChart size={20}/> Projekty</div>
@@ -155,14 +156,16 @@ const MainDashboard = ({ onBack, onLogout }) => {
             </div>
  
             {/* Czat */}
-            <div className="w-96 bg-white border-l border-slate-200 shadow-xl flex flex-col shrink-0 rounded-l-2xl overflow-hidden h-full">
+            <div className="w-96 bg-white border-l border-slate-200 shadow-xl flex flex-col shrink-0 rounded-2xl overflow-hidden h-full">
                <div className="p-4 border-b border-slate-100 bg-slate-50 flex items-center gap-3">
-                  <div className="w-10 h-10 bg-white border border-slate-200 rounded-full flex items-center justify-center shadow-sm">🦅</div>
+                  <div className="w-10 h-10 bg-white border border-slate-200 rounded-full flex items-center justify-center shadow-sm text-blue-600">
+                     <Bird size={20} />
+                  </div>
                   <div><h3 className="font-bold text-slate-800 text-sm">Bielik Copilot</h3><div className="flex items-center gap-1 text-[10px] text-green-600 font-bold uppercase"><Lock size={8} /> On-Premise</div></div>
                </div>
                <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-white">
                   <div className="flex justify-start">
-                     <div className="bg-blue-50 border border-blue-100 p-4 rounded-2xl rounded-tl-none text-sm text-slate-700 w-full">
+                     <div className="bg-blue-50 border border-blue-100 p-4 rounded-2xl text-sm text-slate-700 w-full">
                         <p className="mb-2 font-bold text-blue-800">Alert dla Twojej branży</p>
                         <p className="mb-3">Janie, wykryłem ryzyko audytu, ale Art. 15 zwalnia MŚP.</p>
                         <button onClick={() => setShowDoc(true)} className="w-full flex items-center justify-between bg-white border border-blue-200 text-blue-700 px-3 py-2 rounded-lg hover:bg-blue-100 transition-colors shadow-sm text-xs font-bold">

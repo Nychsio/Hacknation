@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Train, CheckCircle, AlertCircle } from 'lucide-react';
+import { Train, CheckCircle, AlertCircle, MessageSquare } from 'lucide-react';
 
 export const Badge = ({ children, color = "blue" }) => {
   const styles = {
@@ -39,8 +39,8 @@ export const HorizontalTrain = () => {
          <div className="absolute top-4 -translate-y-1/2 left-0 h-1 bg-blue-600 -z-0 rounded transition-all duration-1000" style={{ width: '25%' }}></div>
          {steps.map((step, index) => (
            <div key={index} className="relative z-10 flex flex-col items-center">
-             <div className={`w-8 h-8 rounded-full flex items-center justify-center border-4 bg-white ${step.status === 'done' ? 'border-blue-600 text-blue-600' : step.status === 'current' ? 'border-blue-600 text-white bg-blue-600 scale-110' : 'border-slate-200 text-slate-300'}`}>
-               {step.status === 'done' ? <CheckCircle size={14} /> : step.status === 'current' ? <div className="animate-pulse w-2 h-2 bg-white rounded-full"/> : <div className="w-2 h-2 bg-slate-300 rounded-full" />}
+             <div className={`w-8 h-8 rounded-full flex items-center justify-center border-4 bg-white ${step.status === 'done' ? 'border-blue-600 text-blue-600' : step.status === 'current' ? 'border-blue-600 text-blue-600 bg-white scale-110' : 'border-slate-200 text-slate-300'}`}>
+               {step.status === 'done' ? <CheckCircle size={14} /> : step.status === 'current' ? <MessageSquare size={14} strokeWidth={3} /> : <div className="w-2 h-2 bg-slate-300 rounded-full" />}
              </div>
              <span className={`mt-3 text-[10px] font-bold uppercase ${step.status === 'current' ? 'text-blue-900' : 'text-slate-400'}`}>{step.label}</span>
              {step.userAction && <div className="absolute -top-8 bg-yellow-100 text-yellow-900 text-[10px] px-2 py-1 rounded border border-yellow-900 font-bold">Twój wpływ!</div>}

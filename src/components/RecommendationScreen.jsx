@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { User, ArrowUpRight, Calendar, ChevronRight, FileText, AlertCircle, LogOut } from 'lucide-react';
 import { Badge } from './Shared';
+import logo from '../assets/logo.png';
 
 const RecommendationScreen = ({ onSelectProject, onLogout }) => {
   return (
@@ -11,7 +12,7 @@ const RecommendationScreen = ({ onSelectProject, onLogout }) => {
        <header className="bg-white border-b border-slate-200 px-8 h-16 flex justify-between items-center shrink-0 z-10 shadow-sm">
           <div className="flex items-center gap-3">
              {/* Logo - Spokojne */}
-             <div className="w-8 h-8 bg-white border border-slate-200 rounded flex items-center justify-center text-blue-800 font-bold text-lg shadow-sm">L</div>
+             <img src={logo} alt="Logo" className="w-8 h-8 rounded" />
              <div className="flex flex-col">
                 <span className="font-bold text-sm tracking-tight text-slate-800">mLegislacja</span>
                 <span className="text-[10px] text-slate-400 uppercase tracking-wider">Serwis Rzeczypospolitej Polskiej</span>
