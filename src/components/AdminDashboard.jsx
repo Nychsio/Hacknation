@@ -165,7 +165,7 @@ const AdminDashboard = ({ onLogout }) => {
               />
            <div>
               <p className="font-bold text-[10px] tracking-widest uppercase text-slate-500">Gov.pl</p>
-              <p className="font-bold text-white tracking-tight text-lg">Legislator <span className="text-indigo-500">Pro</span></p>
+              <p className="font-bold text-white tracking-tight text-lg">Legis <span className="text-indigo-500">2.0</span></p>
            </div>
         </div>
         
@@ -215,8 +215,8 @@ const AdminDashboard = ({ onLogout }) => {
                         </div>
                      </div>
                      <div className="bg-slate-900 border border-slate-800 px-4 py-2 rounded-lg flex gap-4 text-xs font-mono text-slate-400">
-                        <span>ACTIVE: 12</span>
-                        <span>PENDING: 4</span>
+                        <span>Aktywnych: 12</span>
+                        <span>oczekujące: 4</span>
                      </div>
                   </header>
 
