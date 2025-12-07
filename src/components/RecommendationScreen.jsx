@@ -14,7 +14,7 @@ const RecommendationScreen = ({ onSelectProject, onLogout }) => {
              {/* Logo - Spokojne */}
              <img src={logo} alt="Logo" className="w-8 h-8 rounded" />
              <div className="flex flex-col">
-                <span className="font-bold text-sm tracking-tight text-slate-800">mLegislacja</span>
+                <span className="font-bold text-sm tracking-tight text-slate-800">Legis 2.0</span>
                 <span className="text-[10px] text-slate-400 uppercase tracking-wider">Serwis Rzeczypospolitej Polskiej</span>
              </div>
           </div>

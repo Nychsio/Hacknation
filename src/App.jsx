@@ -3,6 +3,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import OnboardingScreen from './components/OnboardingScreen';
 import RecommendationScreen from './components/RecommendationScreen';
 import MainDashboard from './components/MainDashboard';
+import AdminDashboard from './components/AdminDashboard'; // 1. Nowy import
 
 export default function App() {
   const [view, setView] = useState(() => localStorage.getItem('app_view') || 'onboarding');
@@ -18,7 +19,9 @@ export default function App() {
   };
 
   return (
-    <div className="relative min-h-screen w-screen overflow-hidden bg-slate-50">
+    // 2. Dynamiczna klasa tła: Zmienia kolor 'pod spodem' na ciemny w trybie admina, 
+    // żeby animacja wyglądała profesjonalnie (Light Mode -> Dark Mode transition)
+    <div className={`relative min-h-screen w-screen overflow-hidden transition-colors duration-500 ${view === 'admin' ? 'bg-slate-950' : 'bg-slate-50'}`}>
       <AnimatePresence mode="wait">
         <motion.div
           key={view}
@@ -30,7 +33,10 @@ export default function App() {
           className="absolute inset-0"
         >
           {view === 'onboarding' && (
-            <OnboardingScreen onNext={() => setView('list')} />
+            <OnboardingScreen 
+              onNext={() => setView('list')} 
+              onAdminLogin={() => setView('admin')} // 3. Obsługa wejścia do Admina
+            />
           )}
           
           {view === 'list' && (
@@ -45,6 +51,13 @@ export default function App() {
               onBack={() => setView('list')} 
               onLogout={() => setView('onboarding')}
             />
+          )}
+
+          {/* 4. Nowy widok Admina */}
+          {view === 'admin' && (
+             <AdminDashboard 
+                onLogout={() => setView('onboarding')} 
+             />
           )}
         </motion.div>
       </AnimatePresence>
